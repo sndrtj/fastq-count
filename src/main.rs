@@ -1,6 +1,9 @@
 extern crate bio;
 extern crate flate2;
 
+#[macro_use]
+extern crate serde_json;
+
 use std::env;
 use std::io::BufReader;
 use bio::io::fastq;
@@ -37,7 +40,12 @@ fn main() {
         basecount += len;
         readcount += 1;
     }
-    println!("{}",basecount);
-    println!("{}", readcount);
+
+    let j = json!({
+       "reads": readcount,
+       "bases": basecount
+    });
+
+    println!("{}",j.to_string());
 
 }

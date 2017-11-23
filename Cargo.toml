@@ -6,3 +6,4 @@ authors = ["Sander Bollen <a.h.b.bollen@lumc.nl>"]
 [dependencies]
 bio = "*"
 flate2 = "0.2"
+serde_json = "1.0"
