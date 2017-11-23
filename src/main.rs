@@ -13,7 +13,7 @@ use std::fs;
 fn get_fastq_reader(path: &String) -> Box<::std::io::Read> {
     if path.ends_with(".gz") {
         let f = fs::File::open(path).unwrap();
-        Box::new(bufread::GzDecoder::new(BufReader::new(f)).unwrap())
+        Box::new(bufread::MultiGzDecoder::new(BufReader::new(f)).unwrap())
     } else {
         Box::new(fs::File::open(path).unwrap())
     }
