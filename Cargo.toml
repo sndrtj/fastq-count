@@ -1,0 +1,8 @@
+[package]
+name = "fastq-count"
+version = "0.1.0"
+authors = ["Sander Bollen <a.h.b.bollen@lumc.nl>"]
+
+[dependencies]
+bio = "*"
+flate2 = "0.2"
