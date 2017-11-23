@@ -21,19 +21,23 @@ fn main() {
     let r1 = &args[1];
     let r2 = &args[2];
 
-    let mut count = 0;
+    let mut basecount = 0;
+    let mut readcount = 0;
 
     let r1_reader = fastq::Reader::new(get_fastq_reader(r1));
     let r2_reader = fastq::Reader::new(get_fastq_reader(r2));
 
     for r1_record in r1_reader.records(){
         let len = r1_record.unwrap().seq().len();
-        count += len;
+        basecount += len;
+        readcount += 1;
     }
     for r2_record in r2_reader.records(){
         let len = r2_record.unwrap().seq().len();
-        count += len;
+        basecount += len;
+        readcount += 1;
     }
-    println!("{}",count);
+    println!("{}",basecount);
+    println!("{}", readcount);
 
 }
