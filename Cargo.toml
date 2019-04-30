@@ -10,6 +10,6 @@ readme = "README.md"
 
 
 [dependencies]
-bio = "*"
+bio = "0.25"
 flate2 = "0.2"
 serde_json = "1.0"
