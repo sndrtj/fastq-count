@@ -2,6 +2,12 @@
 name = "fastq-count"
 version = "0.1.0"
 authors = ["Sander Bollen <a.h.b.bollen@lumc.nl>"]
+license = "MIT"
+description = "Simple fastq read and base counter for paired data."
+edition = "2018"
+repository = "https://github.com/sndrtj/fastq-count/"
+readme = "README.md"
+
 
 [dependencies]
 bio = "*"
