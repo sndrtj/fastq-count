@@ -9,6 +9,7 @@ use std::io::BufReader;
 use bio::io::fastq;
 use flate2::bufread;
 use std::fs;
+use std::process;
 
 fn get_fastq_reader(path: &String) -> Box<::std::io::Read> {
     if path.ends_with(".gz") {
@@ -22,6 +23,14 @@ fn get_fastq_reader(path: &String) -> Box<::std::io::Read> {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let r1 = &args[1];
+
+    if r1.starts_with("--help") {
+        println!("Usage: fastq-count r1.fq r2.fq \n \n\
+                  Both input files may be compressed using gzip, \n\
+                  in which case they must end with '.gz'");
+        process::exit(0);
+    }
+
     let r2 = &args[2];
 
     let mut basecount = 0;
