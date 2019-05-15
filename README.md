@@ -1,6 +1,13 @@
+[![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat)](http://bioconda.github.io/recipes/fastq-count/README.html)
 # fastq-count
 
-Simple fastq read and base counter for paired data. 
+Simple fastq read and base counter for paired data.
+
+# Installation
+
+```bash
+conda install fastq-count
+``` 
 
 ## Usage
 
